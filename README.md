@@ -1,10 +1,10 @@
-# About
+## **About**
 
-Experimental function to transparently override nested JS objects.
+Experimental function to transparently override nested JavaScript objects.
 
-# How to use it
+## How to use it
 
-```
+```ts
 AG_defineProperty(path_to_the_property:string, descriptor:ExtendedPropertyDescriptor, base?:object):void
 ```
 In short, whenever a nested property `path_to_the_property` of an object `base` (defaults to `window`) _can be_ accessed, it will _already_ have a property descriptor provided by you with `AG_defineProperty` call.
@@ -33,7 +33,7 @@ A property descriptor is an _access side-effect descriptor_ if it owns either a 
 
 ### Example
 
-```
+```js
 AG_defineProperty('onerror', {
     beforeGet: function() {
         console.log('retrieving global error event handler');
@@ -51,18 +51,18 @@ AG_defineProperty('onerror', {
 # How to build
 
 Install dependencies by running:
-```
+```sh
 yarn install
 ```
 The dev build without minification can be built with:
-```
+```sh
 yarn run build-dev
 ```
 The minified build is available with:
-```
+```sh
 yarn run build
 ```
 Run tests with build output with:
-```
+```sh
 yarn run test
 ```
